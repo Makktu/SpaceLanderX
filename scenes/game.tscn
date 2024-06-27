@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs1dqch0yvpkm"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_r1ou4"]
+[ext_resource type="PackedScene" uid="uid://cej2ltuvgg7yo" path="res://scenes/player.tscn" id="1_skaq3"]
+[ext_resource type="Texture2D" uid="uid://dofdgvwemm1ew" path="res://assets/background/nebulaset.png" id="2_2m007"]
+[ext_resource type="AudioStream" uid="uid://c2f10ve70eiil" path="res://assets/sfx/space.wav" id="2_q5rjd"]
+[ext_resource type="PackedScene" uid="uid://c2dxoo8if1sqi" path="res://scenes/terrain.tscn" id="5_w037o"]
+
+[node name="game" type="Node2D"]
+
+[node name="game_manager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_r1ou4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="game_manager"]
+stream = ExtResource("2_q5rjd")
+
+[node name="Marker2D" type="Marker2D" parent="game_manager"]
+position = Vector2(2.08165e-12, 1047)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2m007")
+
+[node name="player" parent="." instance=ExtResource("1_skaq3")]
+unique_name_in_owner = true
+position = Vector2(351, 345)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(0, 9)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="terrain" parent="." instance=ExtResource("5_w037o")]
+position = Vector2(353, 562)
+
+[connection signal="timeout" from="Timer" to="game_manager" method="_on_timer_timeout"]

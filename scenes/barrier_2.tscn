@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp84nryt85dmg"]
+
+[ext_resource type="PackedScene" uid="uid://c2dxoo8if1sqi" path="res://scenes/terrain.tscn" id="1_5syc7"]
+
+[node name="barrier2" type="Node2D"]
+position = Vector2(2.08165e-12, 1357)
+
+[node name="terrain" parent="." instance=ExtResource("1_5syc7")]
+
+[node name="terrain2" parent="." instance=ExtResource("1_5syc7")]
+position = Vector2(592, 2.08165e-12)
+
+[node name="terrain3" parent="." instance=ExtResource("1_5syc7")]
+position = Vector2(292, -1)

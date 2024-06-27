@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2dxoo8if1sqi"]
+
+[ext_resource type="Script" path="res://scripts/terrain.gd" id="1_grct7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ej2g3"]
+size = Vector2(400, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05n0g"]
+size = Vector2(398, 18)
+
+[node name="terrain" type="AnimatableBody2D"]
+script = ExtResource("1_grct7")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_ej2g3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_05n0g")

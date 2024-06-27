@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm4x6pfg1fb6l"]
+
+[ext_resource type="Script" path="res://scripts/barrier_1.gd" id="1_4owwd"]
+[ext_resource type="PackedScene" uid="uid://c2dxoo8if1sqi" path="res://scenes/terrain.tscn" id="1_fi8gv"]
+
+[node name="barrier1" type="Node2D"]
+position = Vector2(0, 1357)
+script = ExtResource("1_4owwd")
+
+[node name="terrain" parent="." instance=ExtResource("1_fi8gv")]
+
+[node name="terrain2" parent="." instance=ExtResource("1_fi8gv")]
+position = Vector2(400, 2.08165e-12)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(337, 2.5)
+scale = Vector2(59.2, 5.15)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

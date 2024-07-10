@@ -12,7 +12,17 @@ size = Vector2(398, 18)
 script = ExtResource("1_grct7")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(200, 0)
 mesh = SubResource("QuadMesh_ej2g3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(200, 0)
+shape = SubResource("RectangleShape2D_05n0g")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(720, 0)
+mesh = SubResource("QuadMesh_ej2g3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(720, 0)
 shape = SubResource("RectangleShape2D_05n0g")

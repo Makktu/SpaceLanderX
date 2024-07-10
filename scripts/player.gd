@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 var top_speed = 200
-var acceleration = 0.1
+var acceleration = 0.35
 var input_vector : Vector2
 var gravity = 10
 var current_velocity
+var FUEL = 1000
+var LEVEL = 1
 
 func get_input(delta):
 	var input_vector = Vector2.ZERO
@@ -28,7 +30,7 @@ func get_input(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	current_velocity = velocity.length()
-	print(current_velocity)
+	#print(current_velocity)
 
 func _physics_process(delta):
 	get_input(delta)
@@ -43,6 +45,7 @@ func _physics_process(delta):
 				print("LANDED SAFELY!")
 	if is_on_floor():
 		velocity = Vector2.ZERO
+	print(global_position)
 
 #########################################################################
 #########################################################################

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj7cxphprqtna"]
+
+[ext_resource type="Texture2D" uid="uid://ybfkx2a0qll5" path="res://assets/textures/Rock049_1K-JPG/Rock049_1K-JPG_Color.jpg" id="1_kehg7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_u3h0g"]
+size = Vector2(400, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubfl2"]
+size = Vector2(20, 1998)
+
+[node name="walls" type="Node2D"]
+
+[node name="wall1" type="AnimatableBody2D" parent="."]
+position = Vector2(818, -31)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="wall1"]
+position = Vector2(102, 659)
+rotation = 1.5708
+scale = Vector2(5, 20)
+mesh = SubResource("QuadMesh_u3h0g")
+texture = ExtResource("1_kehg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2(-89, 658)
+shape = SubResource("RectangleShape2D_ubfl2")
+
+[node name="wall3" type="AnimatableBody2D" parent="."]
+position = Vector2(-282, -44)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="wall3"]
+position = Vector2(102, 659)
+rotation = 1.5708
+scale = Vector2(5, 20)
+mesh = SubResource("QuadMesh_u3h0g")
+texture = ExtResource("1_kehg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2(291, 656)
+shape = SubResource("RectangleShape2D_ubfl2")

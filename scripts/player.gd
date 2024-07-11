@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var top_speed = 200
-var acceleration = 0.35
+var acceleration = 0.15
 var input_vector : Vector2
-var gravity = 10
+var gravity = 20
 var current_velocity
 var FUEL = 1000
 var LEVEL = 1

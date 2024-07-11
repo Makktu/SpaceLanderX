@@ -22,7 +22,7 @@ func random_float_number(lower_value = 1.0, upper_value = 10.0):
 func spawn_next_barrier():
 	var random_x = random_float_number(-300, 300)
 	var next_pos_y = pos_y + 200
-	var next_pos_x = pos_x + random_float_number(-150, 150)
+	var next_pos_x = pos_x + random_float_number(-250, 250)
 	if next_pos_x < -330:
 		next_pos_x = -230
 	if next_pos_x > 150:
